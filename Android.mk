@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),hi6250)
-    include $(call first-makefiles-under,$(LOCAL_PATH))
+ifneq ($(filter berlin venus prague warsaw,$(TARGET_DEVICE)),)
+include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

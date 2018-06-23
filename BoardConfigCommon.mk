@@ -81,9 +81,6 @@ COMMON_SHIMS := '/hwvendor/lib/hw/audio.primary.hisi.so|libshim.so:/hwvendor/lib
 # Linker
 LD_SHIM_LIBS := $(COMMON_SHIMS):$(BERLIN_SHIMS):$(BOND_SHIMS):$(DALLAS_SHIMS):$(NEMO_SHIMS):$(PRAGUE_SHIMS):$(VENUS_SHIMS):$(WARSAW_SHIMS)
 
-## Uncomment to see LD_SHIM_LIBS var
-#$(shell echo $(LD_SHIM_LIBS) >&2)
-
 # RIL
 BOARD_RIL_CLASS := ../../../device/huawei/hi6250/ril/
 SIM_COUNT := 2
@@ -138,9 +135,3 @@ BOARD_HARDWARE_CLASS := device/huawei/hi6250/cmhw/
 # SELinux
 BOARD_SEPOLICY_DIRS += \
 	device/huawei/hi6250/sepolicy
-
-ifneq ($(TARGET_PRODUCT), aosp_hi6250)
-BOARD_SEPOLICY_DIRS += \
-	device/huawei/hi6250/cm_sepolicy
-endif
-

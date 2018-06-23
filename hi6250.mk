@@ -49,16 +49,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
-ifeq ($(TARGET_PRODUCT), omni_hi6250)
-    PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/etc/omni_media_codecs.xml:system/etc/media_codecs.xml
-else ifeq ($(TARGET_PRODUCT), aosp_hi6250)
-    PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/etc/omni_media_codecs.xml:system/etc/media_codecs.xml
-else 
-    PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/etc/media_codecs.xml:system/etc/media_codecs.xml
-endif
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -128,6 +120,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version-1_0_3.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level-0.xml \
+    
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/permissions/android.hardware.huawei.xml:system/etc/permissions/android.hardware.huawei.xml
 
 
