@@ -22,7 +22,7 @@ $(call inherit-product, build/target/product/full_base_telephony.mk)
 $(call inherit-product, build/target/product/languages_full.mk)
 
 # Blobs
-$(call inherit-product, vendor/huawei/hi6250/vendor.mk)
+$(call inherit-product, vendor/huawei/hi6250-common/hi6250-common-vendor.mk)
 
 # 64 bit
 $(call inherit-product, build/target/product/core_64_bit.mk)
@@ -45,12 +45,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/etc/media_profiles_was.xml:system/etc/media_profiles_was.xml \
+	$(LOCAL_PATH)/configs/etc/media_codecs.xml:system/etc/media_codecs.xml
+
+PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/etc/media_codecs.xml:system/etc/media_codecs.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
     libaudioroute \
     audio.a2dp.default \
     audio.r_submix.default
+
+# Doze
+PRODUCT_PACKAGES += \
+    HisiDoze
 
 # Hardware
 PRODUCT_PACKAGES += \

@@ -15,7 +15,6 @@
 #
 
 TARGET_SPECIFIC_HEADER_PATH := device/huawei/hi6250/include
-TARGET_OTA_ASSERT_DEVICE := hi6250,VNS,nemo,berlin,venus,prague,bond
 
 # Board
 TARGET_BOOTLOADER_BOARD_NAME := hisi
