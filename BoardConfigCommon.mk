@@ -90,7 +90,7 @@ BOARD_PROVIDES_LIBREFERENCE_RIL := true
 # Graphics
 USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := true
-BOARD_EGL_CFG := device/huawei/hi6250-common/egl.cfg
+BOARD_EGL_CFG := device/huawei/hi6250-common/binaries/egl.cfg
 HWUI_COMPILE_SYMBOLS := true
 
 # Surfaceflinger
