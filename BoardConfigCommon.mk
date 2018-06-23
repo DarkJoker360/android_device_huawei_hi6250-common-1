@@ -14,14 +14,14 @@
 # limitations under the License.
 #
 
-TARGET_SPECIFIC_HEADER_PATH := device/huawei/hi6250/include
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/hi6250-common/include
 
 # Board
 TARGET_BOOTLOADER_BOARD_NAME := hisi
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-# Platform 
+# Platform
 TARGET_BOARD_PLATFORM := hi6250
 TARGET_CPU_SMP := true
 TARGET_USES_64_BIT_BINDER := true
@@ -81,7 +81,7 @@ COMMON_SHIMS := '/hwvendor/lib/hw/audio.primary.hisi.so|libshim.so:/hwvendor/lib
 LD_SHIM_LIBS := $(COMMON_SHIMS):$(BERLIN_SHIMS):$(BOND_SHIMS):$(DALLAS_SHIMS):$(NEMO_SHIMS):$(PRAGUE_SHIMS):$(VENUS_SHIMS):$(WARSAW_SHIMS)
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/huawei/hi6250/ril/
+BOARD_RIL_CLASS := ../../../device/huawei/hi6250-common/ril/
 SIM_COUNT := 2
 BOARD_PROVIDES_RILD := true
 BOARD_PROVIDES_LIBRIL := true
@@ -90,7 +90,7 @@ BOARD_PROVIDES_LIBREFERENCE_RIL := true
 # Graphics
 USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := true
-BOARD_EGL_CFG := device/huawei/hi6250/egl.cfg
+BOARD_EGL_CFG := device/huawei/hi6250-common/egl.cfg
 HWUI_COMPILE_SYMBOLS := true
 
 # Surfaceflinger
@@ -100,9 +100,6 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 6
 BOARD_NFC_CHIPSET := pn548
 TARGET_USES_NQ_NFC := true
 NXP_CHIP_TYPE := 2
-
-# OTA
-# BLOCK_BASED_OTA := false
 
 # WIFI
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -119,18 +116,18 @@ BOARD_USES_ALSA_AUDIO := true
 PRODUCT_AAPT_CONFIG := normal xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Charger 
+# Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BACKLIGHT_PATH := "/sys/class/leds/lcd_backlight0/brightness"
 HEALTHD_BACKLIGHT_LEVEL := 102
 HEALTHD_FORCE_BACKLIGHT_CONTROL := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/huawei/hi6250/rootdir/fstab.hi6250
+TARGET_RECOVERY_FSTAB := device/huawei/hi6250-common/rootdir/fstab.hi6250
 
 # cmhw
-BOARD_HARDWARE_CLASS := device/huawei/hi6250/cmhw/
+BOARD_HARDWARE_CLASS := device/huawei/hi6250-common/cmhw/
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-	device/huawei/hi6250/sepolicy
+	device/huawei/hi6250-common/sepolicy
