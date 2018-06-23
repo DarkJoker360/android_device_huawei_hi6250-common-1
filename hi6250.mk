@@ -29,7 +29,7 @@ $(call inherit-product, build/target/product/core_64_bit.mk)
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,device/huawei/hi6250/rootdir/,root/)
+	$(call find-copy-subdir-files,*,device/huawei/hi6250-common/rootdir/,root/)
 
 # Recovery ramdisk, libraries and modules.
 PRODUCT_COPY_FILES += \
